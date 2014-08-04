@@ -1,0 +1,23 @@
+
+<div class="form-group">
+    <?php if($discount){ ?>
+    <select name="<?=$name?>[type][]" id="build_type" data-request="<?= $this->getEventHandler('onLoadTypeSelection') ?>" data-request-data="type: $('option:selected',this).val()" data-request-success="$('#build_discount').html(data.result);" class="form-control">
+        <option value=''>--Select One--</option>
+        <option value="single_product" <?php if($discount->type == 'single_product'){ ?>selected<?php } ?>>Item Specific</option>
+        <option value="cart_total" <?php if($discount->type == 'cart_total'){ ?>selected<?php } ?>>Cart Total</option>
+    </select>
+    
+    <input type="hidden" name="<?=$name?>[discounts_id][]" value="<?=$discount->id?>"/>
+    <?php }else{ ?>
+    <select name="<?=$name?>[type][]" id="build_type" data-request="<?= $this->getEventHandler('onLoadTypeSelection') ?>" data-request-data="type: $('option:selected',this).val()" data-request-success="$('#build_discount').html(data.result);" class="form-control">
+        <option value=''>--Select One--</option>
+        <option value="single_product">Single Product</option>
+        <option value="cart_total">Cart Total</option>
+    </select>
+    <?php } ?>
+</div>
+<div id="build_discount">
+    <?php if($discount){ ?>
+            <?php echo $this->makePartial($discount->type); ?>
+    <?php } ?>
+</div>

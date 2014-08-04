@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Discount
+
+# Model Form Field configuration
+form: @/plugins/radiantweb/flodiscounts/models/discount/fields.yaml
+
+# Model Class name
+modelClass: Radiantweb\Flodiscounts\Models\Discount
+
+# Default redirect location
+defaultRedirect: radiantweb/flodiscounts/discounts
+
+# Create page
+create:
+    title: Create Discounts
+    redirect: radiantweb/flodiscounts/discounts/update/:id
+    redirectClose: radiantweb/flodiscounts/discounts
+
+# Update page
+update:
+    title: Edit Discounts
+    redirect: radiantweb/flodiscounts/discounts
+    redirectClose: radiantweb/flodiscounts/discounts
+
+# Preview page
+preview:
+    title: Preview Discounts

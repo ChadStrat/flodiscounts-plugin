@@ -1,0 +1,4 @@
+.form-inline .form-control{
+        min-width: 160px!important;
+        max-width: 240px!important;
+}

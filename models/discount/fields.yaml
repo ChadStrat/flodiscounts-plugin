@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+    name:
+        label: Name
+        span: left
+        tab: General
+    
+    description:
+        label: Description
+        span: left
+        tab: General
+
+    published:
+        label: Published
+        span: left
+        tab: General
+        type: datepicker
+        options:
+            mode: date
+
+    discount:
+        label: 
+        tab: Discount
+        size: huge
+        type: discountbuilder

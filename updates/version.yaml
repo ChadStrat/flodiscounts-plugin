@@ -1,0 +1,4 @@
+1.0.1: First version of FlexibleDiscounts
+1.0.3:
+    - add flodiscounts data tables
+    - create_discounts_table.php

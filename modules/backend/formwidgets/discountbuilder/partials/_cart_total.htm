@@ -1,0 +1,92 @@
+<div class="well" id="build_discount_form">
+    <div class="form-inline" role="form">
+      <div class="form-group">
+        <label for="exampleInputEmail2">Application Type</label><br/>
+        <select class="form-control" name="<?=$name?>[application][]">
+            <option value="code" <?php if($application == 'code'){ echo 'selected';}?>>Code Entry</option>
+            <option value="auto" <?php if($application == 'auto'){ echo 'selected';}?>>Automatically Applied</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">Expire Date</label><br/>
+        <div
+        id="expire_date"
+        class="field-datepicker"
+        data-control="datepicker"
+        data-show-time="false"
+        >
+            <input
+            type="text"
+            id="expire_date_input"
+            name="<?=$name?>[expire_date][]"
+            value="<?= $expire_date ?>"
+            class="form-control"
+            autocomplete="off">
+        </div>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="<?=$name?>[expires][]" value="1" <?php if($expires > 0){ echo 'checked';}?>> Discount Expires
+        </label>
+      </div>
+    </div>
+
+    <div class="form-inline" role="form">
+      <div class="form-group">
+        <label for="exampleInputEmail2">Code</label><br/>
+        <input type="text" class="form-control" name="<?=$name?>[code][]" value="<?=$code?>"/>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">Code Qty</label><br/>
+        <input type="number" class="form-control" name="<?=$name?>[code_qty][]" value="<?=$code_qty?>"/>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="<?=$name?>[code_limit][]" value="1" <?php if($code_limit > 0){ echo 'checked';}?>> Limited Code Qty
+        </label>
+      </div>
+    </div>
+
+    <div class="form-inline" role="form">
+      <div class="form-group">
+        <label for="exampleInputPassword2">Cart</label><br/>
+        <select class="form-control" name="<?=$name?>[comp_type][]">
+            <option value="price" <?php if($comp_type == 'price'){ echo 'selected';}?>>Total</option>
+            <option value="number" <?php if($comp_type == 'number'){ echo 'selected';}?>>Number Of Items</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">Compare Opporator</label><br/>
+        <select class="form-control" name="<?=$name?>[comp_oporator][]">
+            <option value="==" <?php if($comp_oporator == '=='){ echo 'selected';}?>>==</option>
+            <option value=">=" <?php if($comp_oporator == '>='){ echo 'selected';}?>>>=</option>
+            <option value="<=" <?php if($comp_oporator == '<='){ echo 'selected';}?>><=</option>
+            <option value="<" <?php if($comp_oporator == '<'){ echo 'selected';}?>><</option>
+            <option value=">" <?php if($comp_oporator == '>'){ echo 'selected';}?>>></option>
+            <option value="IS NULL" <?php if($comp_oporator == 'IS NULL'){ echo 'selected';}?>>is null</option>
+            <option value="IS NOT NULL" <?php if($comp_oporator == 'IS NOT NULL'){ echo 'selected';}?>>is not null</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">Compare Value</label><br/>
+        <input type="text" class="hasDatePicker form-control" name="<?=$name?>[comp_value][]" value="<?=$comp_value?>"/>
+      </div>
+    </div>
+
+    <div class="form-inline" role="form">
+      <div class="form-group">
+        <label for="exampleInputPassword2">Discount Amount</label><br/>
+        <input type="text" class="hasDatePicker form-control" name="<?=$name?>[mod_value][]" value="<?=$mod_value?>"/>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">Discount Type</label><br/>
+        <select class="form-control" name="<?=$name?>[mod_target][]">
+            <option value="percent" <?php if($mod_target == 'percent'){ echo 'selected';}?>>percent</option>
+            <option value="amount" <?php if($mod_target == 'amount'){ echo 'selected';}?>>amount</option>
+        </select>
+      </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //$('[data-control="datepicker"]').datePicker();
+</script>
