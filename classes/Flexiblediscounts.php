@@ -243,8 +243,7 @@ class Flexiblediscounts
 
         foreach($discounts as $discount)
         {
-            if( $discount->discounts->type == 'single_product' && 
-                $discount->discounts->application == 'auto' &&
+            if( $discount->discounts->application == 'auto' &&
                 ($discount->discounts->expires < 1 || $discount->discounts->expire_date < date('Y-m-d'))
               )
             {
